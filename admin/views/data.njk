@@ -1,0 +1,47 @@
+{% extends 'layout.njk' %}
+{% block content %}
+<div class="container mt100">
+    <h1 class="center">{{title|capitalize}}</h1>
+    
+	  <div class="row">
+		<div class="col s12 m6">
+		  <h3>{{title|capitalize}} Items</h3>
+		  <form role="form" way-data="slides" way-persistent>
+			
+			<div class="form-group" way-repeat="slides">
+			  <div>
+				<div class="item-entry">
+				  <h5>Item</h5>
+				  <label>slide</label>
+				  <input type="text" class="form-control" placeholder="slide"  way-data="slide" way-persistent>
+				  <label>title</label>
+				  <input type="text" class="form-control" placeholder="title"  way-data="t" way-persistent>
+				  <label>paragraph</label>
+				  <textarea type="text" class="form-control" placeholder="paragraph"  way-data="p" way-persistent></textarea>
+				</div>
+				<a href="#" way-action-remove="slides.$$key" way-persistent>Remove</a>
+			  </div>
+			</div>
+			
+			<div class="form-group">
+				<button class="btn btn-default {{config.theme.main}}" way-action-push="slides">Add item</button>
+			</div>
+			
+		  </form>
+		</div>
+
+		{% include 'includes/output.njk' %}
+	
+</div>
+
+
+
+</div>
+{% endblock %}
+{%block scripts%}
+<script>
+    way.set("slides", {{data.slides|dump|safe}});
+
+</script>
+{% endblock %}
+

@@ -1,0 +1,13 @@
+<div class="col s12 m6">
+  <h3>JSON output</h3>
+  <pre way-data="__all__" way-json="true" way-default="{}"  class=""></pre>
+  <div class="col s6">
+	<button class="btn btn-default {{config.theme.main}}" way-clear>Clear data</button>
+  </div>
+  <form role="form" action="/update{{title}}" method="post">
+	<div class="col s6">
+	  <button type="submit" class="btn btn-default right {{config.theme.main}}" >Submit</button>
+	</div>
+	<input id="toUpdate" type="text" name="toUpdate"  way-data="__all__" way-json="false" way-default="{}" hidden>
+  </form>
+</div>

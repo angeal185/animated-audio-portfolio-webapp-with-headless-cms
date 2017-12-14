@@ -1,0 +1,50 @@
+{% extends 'layout.njk' %}
+{% block content %}
+<div class="container mt100">
+    <h1 class="center">{{title|capitalize}}</h1>
+	<div class="row">
+		<div class="col s12 m6">
+		  <h3>{{title|capitalize}} Items</h3>
+		  <form role="form" way-data="playerOptions">
+			<div class="form-group">
+				<div class="item-entry">
+				  <h5>Item</h5>
+				  <label>repeating</label>
+				  <input type="text" class="form-control" placeholder="repeating"  way-data="playerOptions.repeating">
+				  <label>seeking</label>
+				  <input type="text" class="form-control" placeholder="seeking"  way-data="playerOptions.seeking">
+				  <label>seekingVol</label>
+				  <input type="text" class="form-control" placeholder="seekingVol"  way-data="playerOptions.seekingVol">
+				  <label>rightClick</label>
+				  <input type="text" class="form-control" placeholder="rightClick"  way-data="playerOptions.rightClick">
+				  <label>apActive</label>
+				  <input type="text" class="form-control" placeholder="apActive"  way-data="playerOptions.apActive">
+				  <label>volume</label>
+				  <input type="text" class="form-control" placeholder="volume"  way-data="playerOptions.volume">
+				  <label>changeDocTitle</label>
+				  <input type="text" class="form-control" placeholder="changeDocTitle"  way-data="playerOptions.changeDocTitle">
+				  <label>confirmClose</label>
+				  <input type="text" class="form-control" placeholder="confirmClose"  way-data="playerOptions.confirmClose">
+				  <label>autoPlay</label>
+				  <input type="text" class="form-control" placeholder="autoPlay"  way-data="playerOptions.autoPlay">
+				  <label>buffered</label>
+				  <input type="text" class="form-control" placeholder="buffered"  way-data="playerOptions.buffered">
+				  <label>notification</label>
+				  <input type="text" class="form-control" placeholder="notification"  way-data="playerOptions.notification">
+				</div>
+			</div>
+		  </form>
+		</div>
+		{% include 'includes/output.njk' %}
+		
+</div>
+
+
+
+</div>
+{% endblock %}
+{%block scripts%}
+<script>
+    way.set("playerOptions", {{data.playerOptions|dump|safe}});
+</script>
+{% endblock %}
