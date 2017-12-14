@@ -1,0 +1,21 @@
+{
+  "name": "animated-audio-portfolio-webapp-with-headless-cms",
+  "version": "1.0.0",
+  "description": "jquery animated audio portfolio webapp with headless cms",
+  "main": "admin/app/bin/www",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "audio"
+  ],
+  "author": "ben eaves",
+  "license": "MIT",
+  "devDependencies": {
+    "node-static": "^0.7.10"
+  },
+  "dependencies": {
+    "express": "^4.16.2",
+    "nunjucks": "^3.0.1"
+  }
+}
